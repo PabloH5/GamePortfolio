@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PabloController : MonoBehaviour
 {
-    // Start is called before the first frame update
     [Header("Set In Inspector")]
     public Vector2 speed = new Vector2(1f, 1f);
 
@@ -17,9 +16,9 @@ public class PabloController : MonoBehaviour
     {
         rigidBody2D = GetComponent<Rigidbody2D>();
         animatorController = GetComponent<Animator>();
+        rigidBody2D.gravityScale = 65;
     }
 
-    // Update is called once per frame
     void Update()
     {
         float inputX = Input.GetAxis("Horizontal");
@@ -43,5 +42,13 @@ public class PabloController : MonoBehaviour
             animatorController.SetBool("isWalking", true);
         }
         else { animatorController.SetBool("isWalking", false); }
+    }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Piso"))
+        {
+            rigidBody2D.gravityScale = 1;
+            Camera.main.transform.SetParent(this.gameObject.transform);
+        }
     }
 }
