@@ -7,13 +7,20 @@ public class PabloController : MonoBehaviour
 {
     [Header("Set In Inspector")]
     public Vector2 speed = new Vector2(1f, 1f);
-
+    private bool isFinish;
     private Vector2 movement;
     private Rigidbody2D rigidBody2D;
     private Animator animatorController;
 
+
+    public bool IsFinish
+    {
+        get { return isFinish; }
+        set { isFinish = value; }
+    }
     void Start()
     {
+        isFinish = false;
         rigidBody2D = GetComponent<Rigidbody2D>();
         animatorController = GetComponent<Animator>();
         rigidBody2D.gravityScale = 65;
@@ -22,7 +29,12 @@ public class PabloController : MonoBehaviour
     void Update()
     {
         float inputX = Input.GetAxis("Horizontal");
-        movement = new Vector2(inputX * speed.x, 0);
+
+        if (!isFinish)
+        {
+            movement = new Vector2(inputX * speed.x, 0);
+        }
+        else { movement = Vector2.zero; }
 
         if (inputX < 0)
         {
@@ -33,7 +45,6 @@ public class PabloController : MonoBehaviour
             this.transform.localScale = new Vector3(1, 1, 1);
         }
     }
-
     private void FixedUpdate()
     {
         rigidBody2D.velocity = movement;
@@ -48,7 +59,13 @@ public class PabloController : MonoBehaviour
         if (other.gameObject.CompareTag("Piso"))
         {
             rigidBody2D.gravityScale = 1;
-            Camera.main.transform.SetParent(this.gameObject.transform);
+        }
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            animatorController.SetBool("isEnding", true);
         }
     }
 }
