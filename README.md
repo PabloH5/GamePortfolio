@@ -30,9 +30,9 @@ Puedes ver una version alpha en web [aqui](https://play.unity.com/mg/other/webgl
 
 ## 📂 Para Conocer Un Poco Mas
 
-[GitHub](https://github.com/PabloH5)
-[Linkedin](https://www.linkedin.com/in/jpablo-martinez/)
-[Email](juanpablomartinezguzman@gmail.com)
+- [GitHub](https://github.com/PabloH5)
+- [Linkedin](https://www.linkedin.com/in/jpablo-martinez/)
+- [Email](juanpablomartinezguzman@gmail.com)
 
 ---
 
