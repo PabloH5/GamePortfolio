@@ -10,8 +10,9 @@ Para navegar por mi portafolio, simplemente usa las teclas de dirección para mo
 
 Haz clic en la imagen de abajo para ver el video de mi portafolio:
 
-[![Portafolio 2024](https://raw.githubusercontent.com/PabloH5/GamePortfolio/desktop/Assets/Sprites/PortadaPortfolio.jpeg)](https://youtu.be/0S8W4lN9WA0?si=b4qIyBi5A28OPPAM "Haz clic para ver el video")
-
+<a href="https://youtu.be/0S8W4lN9WA0?si=b4qIyBi5A28OPPAM" target="_blank">
+  <img src="https://raw.githubusercontent.com/PabloH5/GamePortfolio/desktop/Assets/Sprites/PortadaPortfolio.jpeg" alt="Demostración del Portafolio" width="400"/>
+</a>
 
 ## 🛠️ Características
 
