@@ -1,29 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StartVideo : MonoBehaviour
 {
-    private Animator anim;
-    [SerializeField]
-    private PabloController pablo;
-    [SerializeField]
-    private GameObject video;
-    private void Start()
-    {
-        anim = GetComponent<Animator>();
-    }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            anim.SetBool("isClose", true);
-            pablo.IsFinish = true;
-            Invoke("PlayVideo", 1.5f);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-    }
-    void PlayVideo()
-    {
-        video.SetActive(true);
     }
 }

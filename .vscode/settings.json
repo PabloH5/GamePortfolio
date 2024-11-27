@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "GamePortfolio.sln"
+    "dotnet.defaultSolution": "Pablo-Interactive-Portfolio.sln"
 }
